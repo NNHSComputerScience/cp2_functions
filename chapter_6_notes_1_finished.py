@@ -33,38 +33,41 @@ print(hello_printer())  # returns 'None'
 
 def greeting():
     """This will greet the user to a program"""
-    print("\nWelcome to the program!")
+    print("\nWelcome to the program!\n")
 
 greeting()
 help(greeting) # help function is one way to see documentation for a function
 help(len)
 
 # 4: PARAMETERS: Variable names inside the parentheses of a
-#      function header. A function recieves a value through its
+#      function header. A function receives a value through its
 #      parameters. Parameters catch values sent to the function
 #      from a function call. 
 #    ARGUMENTS: Values sent to a function to use. (put in parentheses of a 
 #      function call)
-#   *note: These terms are sometimes used interchangably, but we will stick to these strict definitions for this class.
+#   *note: These terms are sometimes used interchangeably, but we will stick to these strict definitions for this class.
 
-def display(message):   # message is a parameter
-    print (message)
+def personal_greeting(name):   # message is a parameter
+    """Greets a person by name."""
+    print("\nHello, " + name + "! Welcome to the program.\n")
 
-display("Here is a message for you.\n") # the string "Here is a message for you.\n" is an argument
+personal_greeting("Jake") # the string "Jake" is an argument
+personal_greeting("Class") # the string "Class" is an argument
+name = input("Enter your name: ").title()
+personal_greeting(name)  # the variable name is an argument
 
-# Trap... If I define a function with one parameter, then I must
+# NOTE... If I define a function with one parameter, then I must
 #       use the same number of arguments when calling the function
-
-# display() ERROR
-# display("Hi", "Jake") ERROR
+#personal_greeting() # ERROR
+# personal_greeting("Hi", "Jake") # ERROR
 
 # 5: You can have multiple parameters:
 
-def message2(message, name):
+def message(message, name):
 	"""A message said by a person."""
 	print(name + ":" , message)
 
-message2("Hello, class.", "Mr. Schmit")  # arguments are accepted in positional order
+message("Hello, class.", "Mr. Callaghan")  # arguments are accepted in positional order
 
 # 6: RETURNING.  You can get value(s) out of a function by returning value(s). 
 #   A RETURN VALUE is a value recieved back from a funciton call.
@@ -74,8 +77,8 @@ message2("Hello, class.", "Mr. Schmit")  # arguments are accepted in positional 
 
 def give_me_five():
     """Returns the number five."""
-	print("Here is your number 5!")
-	return 5
+    print("Here is your number 5!")
+    return 5
     print("test") # unreachable code (function ends after the return statement)
 
 number = give_me_five()

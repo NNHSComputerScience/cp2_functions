@@ -1,8 +1,10 @@
-# Chapter 6 notes #2
-
+"""
+    Name: 
+    Title: Scope and Encapsulation   
+"""
 # SCOPE defines the accessibility of separate parts of a program. Functions
 #       have a local scope by default, which means variables (including parameters)
-#       initialized within a function are LOCAL VARIBALES, and only exist within that particular function.
+#       initialized within a function are LOCAL VARIABLES, and only exist within that particular function.
 
 
 # GLOBAL vs. LOCAL SCOPE
