@@ -1,2 +1,2 @@
-# cp2_ch6
-Computer Programming 2 - Chapter 6
+# cp2_functions
+Computer Programming 2 - Functions
