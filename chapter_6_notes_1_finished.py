@@ -4,17 +4,17 @@ Title: Notes on Functions
 Description: Notes on the basics of defining and using functions in Python.
 """
 
-# Python lets you create your own functions.
 # A FUNCTION is a reusable block of code that performs a specific task.
-#   Functions allow you to abstract away unneccessary information and leverage modular design.
+#   Functions allow you to abstract away unnecessary information and leverage modular design.
+#   Built-in functions we know: print(), input(), len(), random.randint(), etc.
 
 #  ABSTRACTION is hiding all but the most relevant details. 
 #   Lets you think about the big picture without worrying about the details.
 #   e.g. variable or function names are an abstraction of their actual contents.
 
-# 1: Creating a function is reffered to as... Defining a Function
+# 1: Creating a function is referred to as... Defining a Function
 
-# FUNCTION DEFINIITON is the entire function, both header and body.
+# FUNCTION DEFINITION is the entire function, both header and body.
 def hello_printer():  # FUNCTION HEADER is the first line of a function definition.
     print ("Hello, World.")  # FUNCTION BODY is the indented block of code below the header.
 
@@ -70,7 +70,7 @@ def message(message, name):
 message("Hello, class.", "Mr. Callaghan")  # arguments are accepted in positional order
 
 # 6: RETURNING.  You can get value(s) out of a function by returning value(s). 
-#   A RETURN VALUE is a value recieved back from a funciton call.
+#   A RETURN VALUE is a value received back from a function call.
 #    You can return a value from a function by using
 #    a RETURN STATEMENT. A function always ends after
 #    executing a return statement, and the RETURN VALUE is returned.
@@ -130,50 +130,4 @@ tot2 = add_2(roll3, roll4)
 print("\nThe total of rolls 1 & 2 is", tot)
 print("\nThe total of rolls 3 & 4 is", tot2)
 
-# UNIT TEST - test if a function works on its own
-# INTEGRATION TEST - test if a function works with other functions (possibly in the main code area)
-
-# simple interest function
-def simple_interest(p, r, t):
-    """Calculates and returns simple interest given the principal, interest rate,
-        and time in years"""
-    i = p * r * t
-    return i  # could also return p + i if you wanted to include principal
-
-# compound interest function
-def compound_interest(p, r, t, n):
-    """Calculates and returns compound interest given the principal, interest rate,
-        time in years, and number of times compounded per year"""
-    a = p * (1 + r/n) ** (n * t)
-    i = a - p
-    return i  # could also return a if you wanted principal and interest
-
-# when designing unit tests:
-#   test more than one thing
-#   test the upper and lower bounds
-#   consider unexpected cases (negatives, types, etc.)
-#   NOTE: you may have to deal with the imprecision of floating point values when testing numbers, 
-#         in which case you want to test if the expected value is 'close enough'
-
-# simple unit tests
-print(simple_interest(100, .10, 2))
-print("Expected:", 20.0)
-
-print()
-result = simple_interest(5500, .07, 5)
-print("Actual:", result)
-print("Expected:", 1925.0)
-print("Pass test?", result - 1925.0 < 0.001)
-
-# compound interest unit tests
-print()
-result = compound_interest(1000, .10, 5, 4)
-print("Actual:", result)
-print("Expected:", 638.62)
-print("Pass test?", result - 638.62 < 0.005)
-
-print()
-result = compound_interest(5000, .20, 4, 2)
-print("Actual:", result)
-print("Expected:", 5717.94)
-print("Pass test?", result - 5717.94 < 0.005)
+input("Press enter to exit.")

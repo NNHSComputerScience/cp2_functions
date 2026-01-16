@@ -2,21 +2,18 @@
     Name: 
     Title: Functions Basics
 """
-# Live-coding notes #1: Functions
+# A FUNCTION is a reusable block of code that performs a specific task.
+#   Functions allow you to abstract away unnecessary information and leverage modular design.
+#   Built-in functions we know: print(), input(), len(), random.randint(), etc.
 
-# Python lets you create your own functions.
-# Functions let you break your code into manageable,
-#   logical chunks (think Modular Design)
-#   Functions also allow you to abstract away unnecessary information.
+#  ABSTRACTION is hiding all but the most relevant details. 
+#   Lets you think about the big picture without worrying about the details.
+#   e.g. variable or function names are an abstraction of their actual contents.
 
-#  Abstraction is naming parts of a program to hide all but the most
-#   relevant details. Lets you think about the big picture without worrying
-#   about the details.
 
-# 1: Creating a function is referred to as
-#    "Defining a Function"
+# 1: Creating a function is referred to as...
+# FUNCTION DEFINITION is the entire function, both header and body.
 # ...
-
 
 # 2: Using a function is referred to as
 #    "Calling a function"
