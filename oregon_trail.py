@@ -4,7 +4,7 @@ Partner 2:
 Title: Oregon Trail
 Description: Recreation of the adventure simulation game of traveling out west in 1800's.
 """
-import random
+import random, os
 
 # -----------------------------------------------------------
 # Help Text -- global variables that contain helper text to display in game (don't edit)
@@ -171,7 +171,7 @@ def unit_tests():
 # -----------------------------------------------------------
 def main():
 	global player_name
-	#unit_tests()  # uncomment when testing your unit test(s)
+	
 	playing = True
 
 	print(welcome_text + help_text + good_luck_text)
@@ -182,15 +182,9 @@ def main():
 		print()
 		action = input("\nChoose an action, {0} --> ".format(player_name))
 		if action == "travel" or action == "t":
-			if food_remaining <= 49:
-				print("You have", food_remaining, "food remaining. You must hunt for food before travelling any further.")
-			else:
-				handle_travel()
+			handle_travel()
 		elif action == "rest" or action == "r":
-			if health_level > 4:
-				print("You have", health_level, "health remaining out of", MAX_HEALTH, "possible. Choose another option.")
-			else:
-				handle_rest()
+			handle_rest()
 		elif action == "hunt" or action == "h":
 			handle_hunt()
 		elif action == "quit" or action == "q":
