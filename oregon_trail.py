@@ -2,7 +2,7 @@
 Partner 1:
 Partner 2:
 Title: Oregon Trail
-Description: Recreation of the aventure simulation game of traveling out west in 1800's.
+Description: Recreation of the adventure simulation game of traveling out west in 1800's.
 """
 import random
 
