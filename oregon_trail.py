@@ -375,7 +375,7 @@ def main():
             playing = False
 
     if player_wins():
-        print("\n\nCongratulations you made it to Oregon alive!\n")
+        print("\n\nCongratulations you made it to Oregon!\n")
         handle_status()
         print("""\n
             __   __              _    _  _         _
