@@ -1,6 +1,6 @@
 """
-    Name:
-    Title: Functions Basics
+	Name:
+	Title: Functions Basics
 """
 # A FUNCTION is a reusable block of code that performs a specific task.
 #   Functions allow you to abstract away unnecessary information and leverage modular design.

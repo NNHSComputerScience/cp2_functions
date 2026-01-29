@@ -16,7 +16,7 @@ Description: Notes on the basics of defining and using functions in Python.
 
 # FUNCTION DEFINITION is the entire function, both header and body.
 def hello_printer():  # FUNCTION HEADER is the first line of a function definition.
-    print ("Hello, World.")  # FUNCTION BODY is the indented block of code below the header.
+	print ("Hello, World.")  # FUNCTION BODY is the indented block of code below the header.
 
 # 2: Using a function is referred to as... "calling a function" or a FUNCTION CALL
 
@@ -32,8 +32,8 @@ print(hello_printer())  # returns 'None'
 #    Can provide useful information when attempting to use the function.
 
 def greeting():
-    """This will greet the user to a program"""
-    print("\nWelcome to the program!\n")
+	"""This will greet the user to a program"""
+	print("\nWelcome to the program!\n")
 
 greeting()
 help(greeting) # help function is one way to see documentation for a function
@@ -48,8 +48,8 @@ help(len)
 #   *note: These terms are sometimes used interchangeably, but we will stick to these strict definitions for this class.
 
 def personal_greeting(name):   # message is a parameter
-    """Greets a person by name."""
-    print("\nHello, " + name + "! Welcome to the program.\n")
+	"""Greets a person by name."""
+	print("\nHello, " + name + "! Welcome to the program.\n")
 
 personal_greeting("Jake") # the string "Jake" is an argument
 personal_greeting("Class") # the string "Class" is an argument
@@ -64,8 +64,8 @@ personal_greeting(name)  # the variable name is an argument
 # 5: You can have multiple parameters:
 
 def message(message, name):
-    """A message said by a person."""
-    print(name + ":" , message)
+	"""A message said by a person."""
+	print(name + ":" , message)
 
 message("Hello, class.", "Mr. Callaghan")  # arguments are accepted in positional order
 
@@ -76,19 +76,19 @@ message("Hello, class.", "Mr. Callaghan")  # arguments are accepted in positiona
 #    executing a return statement, and the RETURN VALUE is returned.
 
 def give_me_five():
-    """Returns the number five."""
-    print("Here is your number 5!")
-    return 5
-    print("test") # unreachable code (function ends after the return statement)
+	"""Returns the number five."""
+	print("Here is your number 5!")
+	return 5
+	print("test") # unreachable code (function ends after the return statement)
 
 number = give_me_five()
 print ("Return value: ", number)
 
 # A function can return any type of value, but only one value at a time
 def give_me_ten():
-    lefthand= 5
-    righthand= 5
-    return (lefthand, righthand) # tuple
+	lefthand= 5
+	righthand= 5
+	return (lefthand, righthand) # tuple
 
 return_value = give_me_ten()
 number1, number2 = return_value # unpack tuple into its elements
@@ -107,15 +107,15 @@ import random
 
 # define all functions at the top of your program:
 def dub_roll():
-    '''Generates a double die roll and returns it as a tuple'''
-    die1 = random.randint(1,6)
-    die2 = random.randrange(1,7)
-    return (die1, die2)
+	'''Generates a double die roll and returns it as a tuple'''
+	die1 = random.randint(1,6)
+	die2 = random.randrange(1,7)
+	return (die1, die2)
 
 def add_2(num1, num2):
-    '''adds two number together and returns the total'''
-    total = num1 + num2
-    return total
+	'''adds two number together and returns the total'''
+	total = num1 + num2
+	return total
 
 # use all functions below in your main code
 roll1, roll2 = dub_roll()

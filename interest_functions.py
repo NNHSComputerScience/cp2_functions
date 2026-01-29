@@ -1,17 +1,17 @@
 # simple interest function
 def simple_interest(p, r, t):
-    """Calculates and returns simple interest given the principal, interest rate,
-        and time in years"""
-    i = p * r * t
-    return i  # could also return p + i if you wanted to include principal
+	"""Calculates and returns simple interest given the principal, interest rate,
+		and time in years"""
+	i = p * r * t
+	return i  # could also return p + i if you wanted to include principal
 
 # compound interest function
 def compound_interest(p, r, t, n):
-    """Calculates and returns compound interest given the principal, interest rate,
-        time in years, and number of times compounded per year"""
-    a = p * (1 + r/n) ** (n * t)
-    i = a - p
-    return i  # could also return a if you wanted principal and interest
+	"""Calculates and returns compound interest given the principal, interest rate,
+		time in years, and number of times compounded per year"""
+	a = p * (1 + r/n) ** (n * t)
+	i = a - p
+	return i  # could also return a if you wanted principal and interest
 
 # when designing unit tests:
 #   test more than one thing

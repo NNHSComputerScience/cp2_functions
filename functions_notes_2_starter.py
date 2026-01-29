@@ -1,6 +1,6 @@
 """
-    Name:
-    Title: Scope and Encapsulation
+	Name:
+	Title: Scope and Encapsulation
 """
 # SCOPE defines the accessibility of separate parts of a program. Functions
 #       have a local scope by default, which means variables (including parameters)

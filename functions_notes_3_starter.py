@@ -6,8 +6,8 @@ import random
 #   value is passed to the function it will use the value assigned
 #   trap: once you assign a default value to one parameter, you must assign one to all parameters.
 def bday(name, age):
-    """prints name and birthday"""
-    print ("Wow", name, "you are", age, "years old!")
+	"""prints name and birthday"""
+	print ("Wow", name, "you are", age, "years old!")
 bday()
 
 #can override default parameter at funciton call (using either positional or keyword arguments)
