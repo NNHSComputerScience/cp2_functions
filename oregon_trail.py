@@ -39,81 +39,265 @@ good_luck_text = "\nGood luck, and see you in Oregon!"
 # -----------------------------------------------------------
 # first function is done for you!
 def handle_invalid_input(response):
-    """Displays a helpful response if the player inputs an invalid command."""
-    print("'{0}' is not a valid command. Try again.".format(response))
+    """Display a helpful response when an invalid command is entered.
 
-# Converts a numeric date into a string.
-# inputs: a month in the range 1-12 and a day in the range 1-31
-# output: a string like "December 24".
-# Note: this function does not enforce calendar rules. It's happy to output impossible strings like "June 95" or "February 31"
+    Args:
+        response (str): The invalid command entered by the player.
+
+    Returns:
+        None
+
+    Example:
+        >>> handle_invalid_input('x')  # prints a message to stdout
+        "'x' is not a valid command. Try again."
+    """
+    print(f"'{response}' is not a valid command. Try again.")
+
 def date_as_string(m, d):
-    """converts a numeric date to a string"""
+    """Convert a numeric date to a readable string.
+
+    Args:
+        m (int): Month (1-12).
+        d (int): Day (1-31).
+
+    Returns:
+        str: A string like "December 24".
+
+    Note:
+        This function does not enforce calendar rules and may return impossible dates such as "June 95" or "February 31".
+
+    Example:
+        >>> date_as_string(12, 24)
+        'December 24'
+    """
     date_string = NAME_OF_MONTH[m] + " " + str(d)
     return date_string
 
-# output: miles remaining until Oregon
-# hint: What global variables could you use to help achieve this?
 def miles_remaining():
+    """Return the number of miles remaining until Oregon.
+    Returns:
+		int: Miles remaining to reach Oregon.
+    Hint: Use the global distance constants and the current miles_traveled.
+    """
     pass # Enter your code here
 
-# print a player's current status on the journey, including food remaining, health level, distance traveled, distance remaining, and date
 def handle_status():
+    """Print the player's current status.
+
+    Displays food remaining, health level, distance traveled, miles remaining, and current date to stdout.
+
+    Returns:
+        None
+
+    Example:
+        >>> handle_status()  # prints status to stdout
+    """
     pass
 
-# prints the help text
 def handle_help():
+    """Show the help text describing available commands.
+
+    Prints the global `help_text` to stdout.
+
+    Returns:
+        None
+
+    Example:
+        >>> handle_help()  # prints the help text
+    """
     pass
 
-# enforces what happens when a player decides to quit in the middle of a game
 def handle_quit():
+    """Handle quitting the game mid-play.
+
+    Performs any necessary cleanup, prints a farewell message, and stops play.
+
+    Returns:
+        bool: False to indicate the game should end; True otherwise.
+
+    Example:
+        >>> handle_quit()  # prints goodbye message and exits loop in `main`
+    """
     pass
 
-# Returns the number of days in the month (28, 30, or 31).
-# input: an integer from 1 to 12. 1=January, 2=February, etc.
-# output: the number of days in the month. If the input is not in the required range, returns 0.
 def days_in_month(m):
+    """Return the number of days in a month.
+
+    Args:
+        m (int): Month number (1=January, ..., 12=December).
+
+    Returns:
+        int: Number of days in the month (28, 30, or 31). Returns 0 for invalid month values.
+
+    Example:
+        >>> days_in_month(2)
+        28
+    """
     pass
 
-# Repairs problematic values in the global (month, day) model where the day is larger than the number of days in the month. If this happens, advances to the next month and knocks the day value down to 1 accordingly. Knows that different months have different numbers of days. Return True if the global month/day values were altered, else return False.
 def maybe_rollover_month():
+    """Advance the month/day if the current day exceeds days in the current month.
+
+    Modifies the global `month` and `day` variables when rollover is needed.
+
+    Returns:
+        bool: True if month/day were adjusted, False otherwise.
+
+    Example:
+        >>> month, day = 1, 32
+        >>> maybe_rollover_month()
+        True
+        >>> (month, day)
+        (2, 1)
+    """
     pass
 
-# decreases the food for 1 elapsed day
 def consume_food():
+    """Consume food for a single day by reducing the global `food_remaining`.
+
+    Side effects:
+        Modifies the global `food_remaining` variable by subtracting `FOOD_EATEN_PER_DAY`.
+
+    Returns:
+        None
+
+    Example:
+        >>> food_remaining = 500
+        >>> consume_food()
+        >>> food_remaining
+        495
+    """
     pass
 
-# enforces rules for what happens when a sickness occurs
 def handle_sickness():
+    """Apply the effects of sickness to the player.
+
+    Side effects:
+        Decrements global `health_level`, may print a message, and updates `sicknesses_suffered_this_month`.
+
+    Returns:
+        None
+
+    Example:
+        >>> health_level = 5
+        >>> handle_sickness()
+        >>> health_level
+        4
+    """
     pass
 
-# enforces the game rules for what happens if a player decides to hunt
 def handle_hunt():
+    """Handle hunting: add food and advance the game clock.
+
+    Side effects:
+        Adds `FOOD_PER_HUNT` to global `food_remaining` and advances the game clock by a random number of days within hunt bounds.
+
+    Returns:
+        None
+
+    Example:
+        >>> food_remaining = 200
+        >>> handle_hunt()
+        >>> food_remaining >= 300
+        True
+    """
     pass
 
-# Calculates whether a sickess occurs on the current day based on how many days remain in the month and how many sick days have already occured this month. If there are N days left in the month, then the chance of a sick day is either 0, 1 out of N, or 2 out of N, depending on whether there have been 2 sick days so far, 1 sick day so far, or no sick days so far.
-# This system guarantees that there will be exactly 2 sick days each month, and incidentally that every day of the month is equally likely to be a sick day
 def random_sickness_occurs():
+    """Determine if sickness occurs today using the monthly guarantee system.
+
+    Returns:
+        bool: True if sickness occurs today, False otherwise.
+
+    Example:
+        >>> random_sickness_occurs() in (True, False)
+        True
+    """
     pass
 
-# Causes a certain number of days to elapse. The days pass one at a time, and each day brings with it a random chance of sickness. The sickness rules are quirky: player is guaranteed to fall ill a certain number of times each month, so illness needs to keep track of month changes.
-# input: an integer number of days that elapse.
 def advance_game_clock():
+    """Advance the game clock day-by-day and process daily events such as sickness.
+
+    Notes:
+        The intended behavior is to accept an integer `days` representing how many days to advance. Each day should:
+          - consume food,
+          - increment the day counter,
+          - call `maybe_rollover_month()` to handle month/day rollover, and
+          - check for sickness via `random_sickness_occurs()` and handle_sickness() accordingly
+          
+	Parameters:
+		days (int): Number of days to advance the game clock.
+    Returns:
+        None
+
+    Example:
+        >>> advance_game_clock(3)  # advance internal game clock by 3 days and performs daily actions
+    """
     pass
 
-# enforces the game rules for what happens if a player decides to travel
 def handle_travel():
+    """Perform a travel action: move, advance the game clock, and update state accordingly.
+
+    Side effects:
+        - Updates global `miles_traveled`, 
+        - advances the game clock, and 
+        - may also display messages about travel progress
+
+    Returns:
+        None
+
+    Example:
+        >>> miles_traveled = 0
+        >>> handle_travel()
+        >>> miles_traveled > 0
+        True
+    """
     pass
 
-# enforces the game rules for what happens if a player decides to rest
 def handle_rest():
+    """Handle resting: increase health and advance the game clock.
+
+    Side effects:
+        - Increases global `health_level`, not exceeding `MAX_HEALTH`,
+        - advances game clock, and 
+        - may display messages about resting
+
+    Returns:
+        None
+
+    Example:
+        >>> health_level = 3
+        >>> handle_rest()
+        >>> health_level
+        4
+    """
     pass
 
-# returns True if the player wins, otherwise returns False
 def player_wins():
+    """Return True if the player has won the game.
+
+    Returns:
+        bool: True if the player has reached Oregon before the final date and is alive, False otherwise.
+
+    Example:
+        >>> miles_traveled = MILES_BETWEEN_MISSOURI_AND_OREGON
+        >>> player_wins()
+        True
+    """
     pass
 
-# returns True if the game is over, otherwise returns False
 def game_is_over():
+    """Return True if the game is over.
+
+    The game is over if the player has died, run out of food, or reached the final date.
+
+    Returns:
+        bool: True if the game has ended, False otherwise.
+
+    Example:
+        >>> game_is_over() in (True, False)
+        True
+    """
     pass
 
 # ---------------------------------------------------------
@@ -156,31 +340,22 @@ sicknesses_suffered_this_month = 0
 player_name = None
 
 # -----------------------------------------------------------
-# UNIT TESTS -- Write any unit tests here (for testing purposes only).
-#    Call the unit test function from the top of the main function 
-#    if you want to test, otherwise comment out the call to the tests.
-#    This is not required, but a good idea.
-# -----------------------------------------------------------
-def unit_tests():
-    """Function to write unit tests for testing other functions"""
-    pass
-
-# -----------------------------------------------------------
 # MAIN GAME -- beginning of the main game code
 #        You should not change any global variables in this function.
 # -----------------------------------------------------------
 def main():
     global player_name
-    
+
     playing = True
 
     print(welcome_text + help_text + good_luck_text)
     player_name = input("\nWhat is your name, player? ").title()
 
     handle_status()
+    input("\nPress enter to start your journey...")
     while playing:
         print()
-        action = input("\nChoose an action, {0} --> ".format(player_name))
+        action = input(f"\nChoose an action, {player_name} --> ").lower().strip()
         if action == "travel" or action == "t":
             handle_travel()
         elif action == "rest" or action == "r":
@@ -188,7 +363,7 @@ def main():
         elif action == "hunt" or action == "h":
             handle_hunt()
         elif action == "quit" or action == "q":
-            handle_quit()
+            playing = handle_quit()
         elif action == "help" or action == "?":
             handle_help()
         elif action == "status" or action == "s":
@@ -203,7 +378,7 @@ def main():
         print("\n\nCongratulations you made it to Oregon alive!\n")
         handle_status()
         print("""\n
-            __   __              _    _  _         _ 
+            __   __              _    _  _         _
             \ \ / /             | |  | |(_)       | |
              \ V / ___   _   _  | |  | | _  _ __  | |
               \ / / _ \ | | | | | |/\| || || '_ \ | |
@@ -215,12 +390,12 @@ def main():
         print("\n\nAlas, you lose...\n")
         handle_status()
         print("""\n
-             _____                        _____                
-            |  __ \                      |  _  |               
-            | |  \/ __ _ _ __ ___   ___  | | | |_   _____ _ __ 
+             _____                        _____
+            |  __ \                      |  _  |
+            | |  \/ __ _ _ __ ___   ___  | | | |_   _____ _ __
             | | __ / _` | '_ ` _ \ / _ \ | | | \ \ / / _ \ '__|
-            | |_\ \ (_| | | | | | |  __/ \ \_/ /\ V /  __/ |   
-             \____/\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
+            | |_\ \ (_| | | | | | |  __/ \ \_/ /\ V /  __/ |
+             \____/\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|
             """)
 if __name__ == "__main__":
     main()

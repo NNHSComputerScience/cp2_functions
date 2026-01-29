@@ -1,6 +1,6 @@
 """
-    Name: 
-    Title: Scope and Encapsulation   
+    Name:
+    Title: Scope and Encapsulation
 """
 # SCOPE defines the accessibility of separate parts of a program. Functions
 #       have a local scope by default, which means variables (including parameters)
@@ -24,9 +24,9 @@ v1, v2, v3 = demo_local("butter", "jelly")
 print("Returned values from the 'demo_local' function:", v1, v2, v3)
 
 # GLOBAL vs. LOCAL SCOPE
-#       GLOBAL VARIABLES initialized outside of functions are accessible throughout 
+#       GLOBAL VARIABLES initialized outside of functions are accessible throughout
 #       a program, and therefore have a global scope.
- 
+
 # Global Reach Example - demonstrates global variable access
 # INSTRUCTOR NOTE: write the main and function headers first and then implement the functions
 
@@ -35,14 +35,14 @@ def read_global():
     """Accessing a global variable from inside a function"""
     print("From inside the local scope of read_global(), value is:", value)
 
-# Shadowing - When a local variable has the same name as a global variable we say that the local shadows the global. 
-#  A shadow means that the global variable cannot be accessed by Python because the local variable will be found first. 
-#  This is another good reason not to use global variables. 
+# Shadowing - When a local variable has the same name as a global variable we say that the local shadows the global.
+#  A shadow means that the global variable cannot be accessed by Python because the local variable will be found first.
+#  This is another good reason not to use global variables.
 def shadow_global():
-    """Creating a local copy of the global variable name""" 
+    """Creating a local copy of the global variable name"""
     value = -10 # using the same variable name is not encouraged to avoid this!
     print("From inside the local scope of shadow_global(), value is:", value)
-  
+
 def change_global():
     """Changing a global variable from inside a function (not encouraged)"""
     global value
@@ -50,8 +50,8 @@ def change_global():
     print("From inside the local scope of change_global(), value is:", value)
 
 # INSTRUCTOR NOTE: Peer Instruction Questions #5 & #6
-    
-# main program 
+
+# main program
 value = 10 # value is a global variable because we're in the global scope here
 print("In the global scope, value has been set to:", value, "\n")
 
@@ -64,7 +64,7 @@ print("Back in the global scope, value is still:", value, "\n")
 change_global() # changes the global variable to -10 and prints it
 print("Back in the global scope, value has now changed to:", value)
 
-# ENCAPSULATION - Keeps code logically independent by ‘hiding’ information from other parts of a program, thus reducing dependencies. 
+# ENCAPSULATION - Keeps code logically independent by ‘hiding’ information from other parts of a program, thus reducing dependencies.
 #   Functions should be written to leverage encapsulation and therefore only rely on local variables whenever possible.
 
 input("Press enter to continue.")

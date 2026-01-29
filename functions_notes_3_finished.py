@@ -42,7 +42,7 @@ bday("Tim") # combining positional and default parameters
 import time
 # globals
 hero = "Link"
-health = 100  
+health = 100
 
 def battle(enemy_hp = 10):
     """Allows a battle to occur between a hero and an enemy of any strength.

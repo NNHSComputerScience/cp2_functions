@@ -24,7 +24,7 @@ def display(test_scores, avg):
     for i in test_scores:
         print("Test score #" + str(test_scores.index(i)+1), i)
     print("The average of all scores is:", avg)
-           
+
 # main
 def main():
     print("Welcome to the Test Scores program!")

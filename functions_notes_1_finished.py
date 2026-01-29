@@ -1,5 +1,5 @@
 """
-Name: 
+Name:
 Title: Notes on Functions
 Description: Notes on the basics of defining and using functions in Python.
 """
@@ -8,7 +8,7 @@ Description: Notes on the basics of defining and using functions in Python.
 #   Functions allow you to abstract away unnecessary information and leverage modular design.
 #   Built-in functions we know: print(), input(), len(), random.randint(), etc.
 
-#  ABSTRACTION is hiding all but the most relevant details. 
+#  ABSTRACTION is hiding all but the most relevant details.
 #   Lets you think about the big picture without worrying about the details.
 #   e.g. variable or function names are an abstraction of their actual contents.
 
@@ -28,7 +28,7 @@ print(hello_printer())  # returns 'None'
 # *** INSTRUCTOR'S NOTE: Do Peer Instruction #1 & #2 ***
 
 # 3: DOCSTRING. A special way to document a function;
-#    It must be triple quoted (single or double), and on the first line after the function header. 
+#    It must be triple quoted (single or double), and on the first line after the function header.
 #    Can provide useful information when attempting to use the function.
 
 def greeting():
@@ -42,8 +42,8 @@ help(len)
 # 4: PARAMETERS: Variable names inside the parentheses of a
 #      function header. A function receives a value through its
 #      parameters. Parameters catch values sent to the function
-#      from a function call. 
-#    ARGUMENTS: Values sent to a function to use. (put in parentheses of a 
+#      from a function call.
+#    ARGUMENTS: Values sent to a function to use. (put in parentheses of a
 #      function call)
 #   *note: These terms are sometimes used interchangeably, but we will stick to these strict definitions for this class.
 
@@ -69,7 +69,7 @@ def message(message, name):
 
 message("Hello, class.", "Mr. Callaghan")  # arguments are accepted in positional order
 
-# 6: RETURNING.  You can get value(s) out of a function by returning value(s). 
+# 6: RETURNING.  You can get value(s) out of a function by returning value(s).
 #   A RETURN VALUE is a value received back from a function call.
 #    You can return a value from a function by using
 #    a RETURN STATEMENT. A function always ends after
@@ -90,7 +90,7 @@ def give_me_ten():
     righthand= 5
     return (lefthand, righthand) # tuple
 
-return_value = give_me_ten() 
+return_value = give_me_ten()
 number1, number2 = return_value # unpack tuple into its elements
 print("Return value:", return_value)
 print("Left", number1)

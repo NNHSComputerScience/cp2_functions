@@ -25,7 +25,7 @@ def translate(orig_list): # takes in an original list of words
     return pig_list # return new list of pig-latin words
 
 # ----------------------------------------------------------------------
-                
+
 def display(list1, list2): # takes in original list and pig-latin list
     """Prints the original words next to the pig-latin words"""
     print("\nOrig Word\tPig-Latin")

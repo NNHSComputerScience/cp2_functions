@@ -1,7 +1,7 @@
 # Functions t0 convert between Celsius and Fahrenheit.
 
 # DOCSTRING: A special way to document a function;
-#    It must be triple quoted (single or double), and on the first line after the function header. 
+#    It must be triple quoted (single or double), and on the first line after the function header.
 #    Can provide useful information when attempting to use the function.
 
 def celsius_to_fahrenheit(celsius):
