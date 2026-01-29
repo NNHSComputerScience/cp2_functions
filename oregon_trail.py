@@ -76,7 +76,7 @@ def date_as_string(m, d):
 def miles_remaining():
     """Return the number of miles remaining until Oregon.
     Returns:
-		int: Miles remaining to reach Oregon.
+        int: Miles remaining to reach Oregon.
     Hint: Use the global distance constants and the current miles_traveled.
     """
     pass # Enter your code here
@@ -225,8 +225,8 @@ def advance_game_clock():
           - call `maybe_rollover_month()` to handle month/day rollover, and
           - check for sickness via `random_sickness_occurs()` and handle_sickness() accordingly
           
-	Parameters:
-		days (int): Number of days to advance the game clock.
+    Parameters:
+        days (int): Number of days to advance the game clock.
     Returns:
         None
 
