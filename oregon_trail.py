@@ -47,9 +47,9 @@ def handle_invalid_input(response):
 # output: a string like "December 24".
 # Note: this function does not enforce calendar rules. It's happy to output impossible strings like "June 95" or "February 31"
 def date_as_string(m, d):
-	"""converts a numeric date to a string"""
-	date_string = NAME_OF_MONTH[m] + " " + str(d)
-	return date_string
+    """converts a numeric date to a string"""
+    date_string = NAME_OF_MONTH[m] + " " + str(d)
+    return date_string
 
 # output: miles remaining until Oregon
 # hint: What global variables could you use to help achieve this?
@@ -58,7 +58,7 @@ def miles_remaining():
 
 # print a player's current status on the journey, including food remaining, health level, distance traveled, distance remaining, and date
 def handle_status():
-	pass
+    pass
 
 # prints the help text
 def handle_help():
@@ -72,37 +72,37 @@ def handle_quit():
 # input: an integer from 1 to 12. 1=January, 2=February, etc.
 # output: the number of days in the month. If the input is not in the required range, returns 0.
 def days_in_month(m):
-	pass
+    pass
 
 # Repairs problematic values in the global (month, day) model where the day is larger than the number of days in the month. If this happens, advances to the next month and knocks the day value down to 1 accordingly. Knows that different months have different numbers of days. Return True if the global month/day values were altered, else return False.
 def maybe_rollover_month():
-	pass
+    pass
 
 # decreases the food for 1 elapsed day
 def consume_food():
-	pass
+    pass
 
 # enforces rules for what happens when a sickness occurs
 def handle_sickness():
-	pass
+    pass
 
 # enforces the game rules for what happens if a player decides to hunt
 def handle_hunt():
-	pass
+    pass
 
 # Calculates whether a sickess occurs on the current day based on how many days remain in the month and how many sick days have already occured this month. If there are N days left in the month, then the chance of a sick day is either 0, 1 out of N, or 2 out of N, depending on whether there have been 2 sick days so far, 1 sick day so far, or no sick days so far.
 # This system guarantees that there will be exactly 2 sick days each month, and incidentally that every day of the month is equally likely to be a sick day
 def random_sickness_occurs():
-	pass
+    pass
 
 # Causes a certain number of days to elapse. The days pass one at a time, and each day brings with it a random chance of sickness. The sickness rules are quirky: player is guaranteed to fall ill a certain number of times each month, so illness needs to keep track of month changes.
 # input: an integer number of days that elapse.
 def advance_game_clock():
-	pass
+    pass
 
 # enforces the game rules for what happens if a player decides to travel
 def handle_travel():
-	pass
+    pass
 
 # enforces the game rules for what happens if a player decides to rest
 def handle_rest():
@@ -157,69 +157,70 @@ player_name = None
 
 # -----------------------------------------------------------
 # UNIT TESTS -- Write any unit tests here (for testing purposes only).
-#	Call the unit test function from the top of the main function 
-#	if you want to test, otherwise comment out the call to the tests.
-#	This is not required, but a good idea.
+#    Call the unit test function from the top of the main function 
+#    if you want to test, otherwise comment out the call to the tests.
+#    This is not required, but a good idea.
 # -----------------------------------------------------------
 def unit_tests():
-	"""Function to write unit tests for testing other functions"""
-	pass
+    """Function to write unit tests for testing other functions"""
+    pass
 
 # -----------------------------------------------------------
 # MAIN GAME -- beginning of the main game code
-#		You should not change any global variables in this function.
+#        You should not change any global variables in this function.
 # -----------------------------------------------------------
 def main():
-	global player_name
-	
-	playing = True
+    global player_name
+    
+    playing = True
 
-	print(welcome_text + help_text + good_luck_text)
-	player_name = input("\nWhat is your name, player? ").title()
+    print(welcome_text + help_text + good_luck_text)
+    player_name = input("\nWhat is your name, player? ").title()
 
-	handle_status()
-	while playing:
-		print()
-		action = input("\nChoose an action, {0} --> ".format(player_name))
-		if action == "travel" or action == "t":
-			handle_travel()
-		elif action == "rest" or action == "r":
-			handle_rest()
-		elif action == "hunt" or action == "h":
-			handle_hunt()
-		elif action == "quit" or action == "q":
-			handle_quit()
-		elif action == "help" or action == "?":
-			handle_help()
-		elif action == "status" or action == "s":
-			handle_status()
-		else:
-			handle_invalid_input(action)
+    handle_status()
+    while playing:
+        print()
+        action = input("\nChoose an action, {0} --> ".format(player_name))
+        if action == "travel" or action == "t":
+            handle_travel()
+        elif action == "rest" or action == "r":
+            handle_rest()
+        elif action == "hunt" or action == "h":
+            handle_hunt()
+        elif action == "quit" or action == "q":
+            handle_quit()
+        elif action == "help" or action == "?":
+            handle_help()
+        elif action == "status" or action == "s":
+            handle_status()
+        else:
+            handle_invalid_input(action)
 
-		if game_is_over():
-			playing = False
+        if game_is_over():
+            playing = False
 
-	if player_wins():
-		print("\n\nCongratulations you made it to Oregon alive!\n")
-		handle_status()
-		print("""\n
-			__   __              _    _  _         _ 
-			\ \ / /             | |  | |(_)       | |
-			 \ V / ___   _   _  | |  | | _  _ __  | |
-			  \ / / _ \ | | | | | |/\| || || '_ \ | |
-			  | || (_) || |_| | \  /\  /| || | | ||_|
-			  \_/ \___/  \__,_|  \/  \/ |_||_| |_|(_)
-			""")
+    if player_wins():
+        print("\n\nCongratulations you made it to Oregon alive!\n")
+        handle_status()
+        print("""\n
+            __   __              _    _  _         _ 
+            \ \ / /             | |  | |(_)       | |
+             \ V / ___   _   _  | |  | | _  _ __  | |
+              \ / / _ \ | | | | | |/\| || || '_ \ | |
+              | || (_) || |_| | \  /\  /| || | | ||_|
+              \_/ \___/  \__,_|  \/  \/ |_||_| |_|(_)
+            """)
 
-	else:
-		print("\n\nAlas, you lose...\n")
-		handle_status()
-		print("""\n
-			 _____                        _____                
-			|  __ \                      |  _  |               
-			| |  \/ __ _ _ __ ___   ___  | | | |_   _____ _ __ 
-			| | __ / _` | '_ ` _ \ / _ \ | | | \ \ / / _ \ '__|
-			| |_\ \ (_| | | | | | |  __/ \ \_/ /\ V /  __/ |   
-			 \____/\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
-			""")
-#main()
+    else:
+        print("\n\nAlas, you lose...\n")
+        handle_status()
+        print("""\n
+             _____                        _____                
+            |  __ \                      |  _  |               
+            | |  \/ __ _ _ __ ___   ___  | | | |_   _____ _ __ 
+            | | __ / _` | '_ ` _ \ / _ \ | | | \ \ / / _ \ '__|
+            | |_\ \ (_| | | | | | |  __/ \ \_/ /\ V /  __/ |   
+             \____/\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
+            """)
+if __name__ == "__main__":
+    main()

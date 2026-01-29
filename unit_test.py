@@ -11,9 +11,9 @@
 #    t = time
 
 def simple_interest(p, r, t):
-	"""Calculates and returns simple interest given a principal dollars, rate as a decimal, and time in years"""
-	i = p * r * t
-	return i
+    """Calculates and returns simple interest given a principal dollars, rate as a decimal, and time in years"""
+    i = p * r * t
+    return i
 
 # compound interest function
 def compound_interest(p, r, t, n):
@@ -24,9 +24,9 @@ def compound_interest(p, r, t, n):
     return i  # could also return a if you wanted principal and interest
 
 # when designing unit tests:
-#		- test more than one thing
-#		- test the upper and lower bounds
-#		- consider unexpected cases (negatives, types, etc.)
+#        - test more than one thing
+#        - test the upper and lower bounds
+#        - consider unexpected cases (negatives, types, etc.)
 # NOTE: you may have to deal with the imprecision of floating point values when testing numbers, in which case you want to test if teh expected value is 'close enough'
 
 

@@ -64,8 +64,8 @@ personal_greeting(name)  # the variable name is an argument
 # 5: You can have multiple parameters:
 
 def message(message, name):
-	"""A message said by a person."""
-	print(name + ":" , message)
+    """A message said by a person."""
+    print(name + ":" , message)
 
 message("Hello, class.", "Mr. Callaghan")  # arguments are accepted in positional order
 

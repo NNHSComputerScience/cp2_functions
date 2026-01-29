@@ -16,9 +16,9 @@
 
 
 # when designing unit tests:
-#		- test more than one thing
-#		- test the upper and lower bounds
-#		- consider unexpected cases (negatives, types, etc.)
+#        - test more than one thing
+#        - test the upper and lower bounds
+#        - consider unexpected cases (negatives, types, etc.)
 # NOTE: you may have to deal with the imprecision of floating point values when testing numbers, in which case you want to test if teh expected value is 'close enough'
 
 
